@@ -22,7 +22,6 @@
             android:textColor="#fff"
             android:textSize="18sp"
             android:layout_gravity="center" />
-
     </androidx.appcompat.widget.Toolbar>
 
     <ScrollView
@@ -87,6 +86,16 @@
                 android:layout_height="wrap_content"
                 android:paddingBottom="5dp"
                 />
+
+            <!-- ImageView for displaying the country flag -->
+            <ImageView
+                android:id="@+id/ivCountryFlag"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:paddingTop="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:scaleType="centerCrop" />
 
         </LinearLayout>
     </ScrollView>

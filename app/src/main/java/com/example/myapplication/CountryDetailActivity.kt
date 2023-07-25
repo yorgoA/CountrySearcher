@@ -5,11 +5,12 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import android.widget.TextView
+import android.widget.ImageView
 import android.graphics.Typeface
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.StyleSpan
-
+import com.bumptech.glide.Glide
 
 class CountryDetailActivity : AppCompatActivity() {
 
@@ -27,6 +28,7 @@ class CountryDetailActivity : AppCompatActivity() {
         val tvPopulation: TextView = findViewById(R.id.tvPopulation)
         val tvCurrency: TextView = findViewById(R.id.tvCurrency)
         val tvLanguages: TextView = findViewById(R.id.tvLanguages)
+        val ivCountryFlag: ImageView = findViewById(R.id.ivCountryFlag) // Added ImageView for flag
 
         val countryData: ApiResponse? = intent.getParcelableExtra("countryData") as? ApiResponse
 
@@ -38,6 +40,10 @@ class CountryDetailActivity : AppCompatActivity() {
             setBoldTitle(tvPopulation, "Population", country.population.toString())
             setBoldTitle(tvCurrency, "Currency", country.currencies?.values?.first()?.name)
             setBoldTitle(tvLanguages, "Languages", country.languages?.values?.joinToString(", "))
+
+            // Load the flag using Glide
+            val flagUrl = country.flags?.png
+            Glide.with(this@CountryDetailActivity).load(flagUrl).into(ivCountryFlag)
         }
 
     }
@@ -53,7 +59,7 @@ class CountryDetailActivity : AppCompatActivity() {
         onBackPressed()
         return true
     }
-    fun setBoldTitle(textView: TextView, title: String, content: String?) {
+    private fun setBoldTitle(textView: TextView, title: String, content: String?) {
         val finalString = "$title: $content"
         val spannableString = SpannableString(finalString)
 
@@ -62,6 +68,4 @@ class CountryDetailActivity : AppCompatActivity() {
 
         textView.text = spannableString
     }
-
-
 }
