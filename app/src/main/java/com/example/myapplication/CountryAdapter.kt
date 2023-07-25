@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -17,6 +18,13 @@ class CountryAdapter(private val countries: List<ApiResponse>) : RecyclerView.Ad
         val country = countries[position]
         holder.binding.textView.text = country.name?.common
         Picasso.get().load(country.flags?.png).into(holder.binding.imageview)  // Loading flag using Picasso
+
+        // Setting click listener for the item
+        holder.itemView.setOnClickListener {
+            val intent = Intent(holder.itemView.context, CountryDetailActivity::class.java)
+            intent.putExtra("countryData", country) // pass the country data
+            holder.itemView.context.startActivity(intent)
+        }
     }
 
     override fun getItemCount() = countries.size

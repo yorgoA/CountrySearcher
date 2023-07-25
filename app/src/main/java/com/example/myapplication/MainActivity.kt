@@ -9,8 +9,8 @@ import retrofit2.Call
 import retrofit2.Response
 import android.text.Editable
 import android.text.TextWatcher
+import androidx.appcompat.widget.Toolbar
 import java.util.Locale
-
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -21,6 +21,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
 
         binding.recyclerview.layoutManager = LinearLayoutManager(this)
 
