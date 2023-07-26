@@ -5,8 +5,10 @@ import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.airbnb.lottie.LottieAnimationView
 import retrofit2.Call
 import retrofit2.Response
+
 
 class GameActivity : AppCompatActivity() {
 

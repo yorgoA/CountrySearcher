@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Country Searcher"
+            android:text="Country Info"
             android:textAlignment="center"
             android:textColor="#fff"
             android:textSize="18sp" />
@@ -98,7 +98,28 @@
 
         </LinearLayout>
     </ScrollView>
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieAnimationRight"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTestYourSkills"
+        app:layout_constraintStart_toEndOf="@+id/tvTestYourSkills"
+        app:layout_constraintTop_toTopOf="@+id/tvTestYourSkills" />
 
+    <TextView
+        android:id="@+id/tvTestYourSkills"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="5dp"
+        android:text="Test Your Skills"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@id/btnGame"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
     <Button
         android:id="@+id/btnGame"
         android:layout_width="wrap_content"

@@ -13,6 +13,7 @@ import android.text.SpannableString
 import android.text.style.StyleSpan
 import android.widget.Button
 import com.bumptech.glide.Glide
+import com.airbnb.lottie.LottieAnimationView
 
 class CountryDetailActivity : AppCompatActivity() {
 
@@ -37,7 +38,8 @@ class CountryDetailActivity : AppCompatActivity() {
             val intent = Intent(this, GameActivity::class.java)
             startActivity(intent)
         }
-
+        val lottieAnimationRight = findViewById<LottieAnimationView>(R.id.lottieAnimationRight)
+        lottieAnimationRight.setAnimation(R.raw.animation)
 
         val countryData: ApiResponse? = intent.getParcelableExtra("countryData") as? ApiResponse
 
