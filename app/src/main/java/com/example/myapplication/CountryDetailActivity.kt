@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
@@ -10,6 +11,7 @@ import android.graphics.Typeface
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.StyleSpan
+import android.widget.Button
 import com.bumptech.glide.Glide
 
 class CountryDetailActivity : AppCompatActivity() {
@@ -29,6 +31,13 @@ class CountryDetailActivity : AppCompatActivity() {
         val tvCurrency: TextView = findViewById(R.id.tvCurrency)
         val tvLanguages: TextView = findViewById(R.id.tvLanguages)
         val ivCountryFlag: ImageView = findViewById(R.id.ivCountryFlag) // Added ImageView for flag
+        // Inside your onCreate
+        val btnGame: Button = findViewById(R.id.btnGame)
+        btnGame.setOnClickListener {
+            val intent = Intent(this, GameActivity::class.java)
+            startActivity(intent)
+        }
+
 
         val countryData: ApiResponse? = intent.getParcelableExtra("countryData") as? ApiResponse
 

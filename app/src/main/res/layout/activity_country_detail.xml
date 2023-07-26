@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:visibility="visible"
+    tools:visibility="visible">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -17,86 +18,96 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="Country Searcher"
             android:textAlignment="center"
             android:textColor="#fff"
-            android:textSize="18sp"
-            android:layout_gravity="center" />
+            android:textSize="18sp" />
     </androidx.appcompat.widget.Toolbar>
 
+
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="68dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:divider="?android:attr/dividerHorizontal"
             android:orientation="vertical"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
-            android:divider="?android:attr/dividerHorizontal"
-            android:showDividers="middle"
-            >
+            android:showDividers="middle">
 
             <TextView
                 android:id="@+id/tvOfficialName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:paddingBottom="10dp"
                 android:textAlignment="center"
-                android:textSize="20sp"
                 android:textColor="@color/black"
-                android:textStyle="bold"
-                android:layout_gravity="center" />
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tvRegionSubregion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingBottom="5dp"
-                />
+                android:paddingBottom="5dp" />
 
             <TextView
                 android:id="@+id/tvCapital"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingBottom="5dp"
-                />
+                android:paddingBottom="5dp" />
 
             <TextView
                 android:id="@+id/tvPopulation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingBottom="5dp"
-                />
+                android:paddingBottom="5dp" />
 
             <TextView
                 android:id="@+id/tvCurrency"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingBottom="5dp"
-                />
+                android:paddingBottom="5dp" />
 
             <TextView
                 android:id="@+id/tvLanguages"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingBottom="5dp"
-                />
+                android:paddingBottom="5dp" />
 
             <!-- ImageView for displaying the country flag -->
             <ImageView
                 android:id="@+id/ivCountryFlag"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:paddingTop="40dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="16dp"
+                android:paddingTop="40dp"
                 android:scaleType="centerCrop" />
 
         </LinearLayout>
     </ScrollView>
+
+    <Button
+        android:id="@+id/btnGame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:background="@android:drawable/ic_media_play"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
