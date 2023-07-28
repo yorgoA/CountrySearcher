@@ -12,7 +12,6 @@ data class QuizResponse(
     @SerializedName("published") val published: Boolean,
     @SerializedName("questions") val questions: ArrayList<Question>?
 ) : Parcelable {
-    // Implement Parcelable methods and companion object just like you did in the ApiResponse class
     constructor(parcel: Parcel) : this(
         parcel.readString(),
         parcel.readString(),
@@ -51,7 +50,6 @@ data class Question(
     @SerializedName("correctAnswer") val correctAnswer: String,
     @SerializedName("incorrectAnswers") val incorrectAnswers: List<String>
 ) : Parcelable {
-    // Implement Parcelable methods and companion object just like you did in the ApiResponse class
     constructor(parcel: Parcel) : this(
         parcel.readString()!!,
         parcel.readString()!!,

@@ -26,7 +26,6 @@ class MainActivity : AppCompatActivity() {
 
         binding.recyclerview.layoutManager = LinearLayoutManager(this)
 
-        // Adding a text watcher to search bar
         binding.searchBar.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
 

@@ -14,7 +14,6 @@
         android:background="?attr/colorPrimary"
         app:layout_constraintTop_toTopOf="parent">
 
-        <!-- Add a TextView to display text in the middle of the Toolbar -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -86,7 +85,6 @@
                 android:layout_height="wrap_content"
                 android:paddingBottom="5dp" />
 
-            <!-- ImageView for displaying the country flag -->
             <ImageView
                 android:id="@+id/ivCountryFlag"
                 android:layout_width="match_parent"
@@ -114,7 +112,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:paddingBottom="5dp"
-        android:text="Test Your Skills"
+        android:text="Quiz Up"
         android:textStyle="bold"
         android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@id/btnGame"

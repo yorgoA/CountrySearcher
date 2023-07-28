@@ -52,7 +52,6 @@ class CountryDetailActivity : AppCompatActivity() {
             setBoldTitle(tvCurrency, "Currency", country.currencies?.values?.first()?.name)
             setBoldTitle(tvLanguages, "Languages", country.languages?.values?.joinToString(", "))
 
-            // Load the flag using Glide
             val flagUrl = country.flags?.png
             Glide.with(this@CountryDetailActivity).load(flagUrl).into(ivCountryFlag)
         }
